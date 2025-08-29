@@ -35,9 +35,16 @@ function exponente(base, exponente) {
   return Math.pow(base, exponente);
 }
 
+function raizCuadrada(num) {
+  if (num < 0) {
+    return "Error: No existe raíz cuadrada de números negativos";
+  }
+  return Math.sqrt(num);
+}
+
 function calculadora() {
   var opcion = prompt(
-    "Elija una opción:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Factorial\n6. Exponente"
+    "Elija una opción:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Factorial\n6. Exponente\n7. Raíz cuadrada"
   );
   var num1 = parseFloat(prompt("Ingrese el primer número:"));
   var num2, resultado;
@@ -65,6 +72,9 @@ function calculadora() {
     case "6":
       var exponenteNum = parseFloat(prompt("Ingrese el exponente:"));
       resultado = exponente(num1, exponenteNum);
+      break;
+    case "7":
+      resultado = raizCuadrada(num1);
       break;
     default:
       resultado = "Opción no válida";
