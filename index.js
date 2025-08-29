@@ -10,9 +10,16 @@ function multiplicar(num1, num2) {
   return num1 * num2;
 }
 
+function dividir(num1, num2) {
+  if (num2 === 0) {
+    return "Error: No se puede dividir por cero";
+  }
+  return num1 / num2;
+}
+
 function calculadora() {
   var opcion = prompt(
-    "Elija una opción:\n1. Suma\n2. Resta\n3. Multiplicación"
+    "Elija una opción:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División"
   );
   var num1 = parseFloat(prompt("Ingrese el primer número:"));
   var num2, resultado;
@@ -30,6 +37,9 @@ function calculadora() {
       break;
     case "3":
       resultado = multiplicar(num1, num2);
+      break;
+    case "4":
+      resultado = dividir(num1, num2);
       break;
     default:
       resultado = "Opción no válida";
