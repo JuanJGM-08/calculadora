@@ -17,9 +17,23 @@ function dividir(num1, num2) {
   return num1 / num2;
 }
 
+function factorial(num) {
+  if (num < 0) {
+    return "Error: No existe factorial de números negativos";
+  }
+  if (num === 0 || num === 1) {
+    return 1;
+  }
+  let resultado = 1;
+  for (let i = 2; i <= num; i++) {
+    resultado *= i;
+  }
+  return resultado;
+}
+
 function calculadora() {
   var opcion = prompt(
-    "Elija una opción:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División"
+    "Elija una opción:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Factorial"
   );
   var num1 = parseFloat(prompt("Ingrese el primer número:"));
   var num2, resultado;
@@ -40,6 +54,9 @@ function calculadora() {
       break;
     case "4":
       resultado = dividir(num1, num2);
+      break;
+    case "5":
+      resultado = factorial(num1);
       break;
     default:
       resultado = "Opción no válida";
