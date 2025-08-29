@@ -31,9 +31,13 @@ function factorial(num) {
   return resultado;
 }
 
+function exponente(base, exponente) {
+  return Math.pow(base, exponente);
+}
+
 function calculadora() {
   var opcion = prompt(
-    "Elija una opción:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Factorial"
+    "Elija una opción:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Factorial\n6. Exponente"
   );
   var num1 = parseFloat(prompt("Ingrese el primer número:"));
   var num2, resultado;
@@ -57,6 +61,10 @@ function calculadora() {
       break;
     case "5":
       resultado = factorial(num1);
+      break;
+    case "6":
+      var exponenteNum = parseFloat(prompt("Ingrese el exponente:"));
+      resultado = exponente(num1, exponenteNum);
       break;
     default:
       resultado = "Opción no válida";
