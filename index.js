@@ -6,9 +6,13 @@ function restar(num1, num2) {
   return num1 - num2;
 }
 
+function multiplicar(num1, num2) {
+  return num1 * num2;
+}
+
 function calculadora() {
   var opcion = prompt(
-    "Elija una opción:\n1. Suma\n2. Resta"
+    "Elija una opción:\n1. Suma\n2. Resta\n3. Multiplicación"
   );
   var num1 = parseFloat(prompt("Ingrese el primer número:"));
   var num2, resultado;
@@ -23,6 +27,9 @@ function calculadora() {
       break;
     case "2":
       resultado = restar(num1, num2);
+      break;
+    case "3":
+      resultado = multiplicar(num1, num2);
       break;
     default:
       resultado = "Opción no válida";
